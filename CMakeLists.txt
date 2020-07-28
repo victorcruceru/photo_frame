@@ -32,22 +32,59 @@ set(FHP_VERSION_MINOR 0)
 set(FHP_VERSION_PATCH 1)
 set(FHP_VERSION ${FHP_VERSION_MAJOR}.${FHP_VERSION_MINOR}.${FHP_VERSION_PATCH})
 
-project(PhotoFrame VERSION ${FHP_VERSION} CXX)
+project(PhotoFrame CXX)
+project(PhotoFrame VERSION ${FHP_VERSION})
 
 # CONFIG directs CMake doesnt search for modules into the 
 # default modules directory
-find_package(imgui CONFIG)
-find_package(glfw CONFIG)
-find_package(glew CONFIG)
+#find_package(imgui CONFIG)
+#find_package(glfw CONFIG)
+#find_package(glew CONFIG)
 
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_compile_options(-Wpedantic -Wall -Werror)
+add_compile_options(-Wall -Werror)
+
+set (SDL2_CONFIG /usr/local/bin/sdl2-config)
+execute_process(COMMAND 
+    ${SDL2_CONFIG} --prefix 
+    OUTPUT_VARIABLE SDL_INCLUDE_PREFIX
+    OUTPUT_STRIP_TRAILING_WHITESPACE)
+message(STATUS "SDL_INCLUDE_PREFIX is ${SDL_INCLUDE_PREFIX}")
+
+execute_process(COMMAND 
+    ${SDL2_CONFIG} --cflags
+    OUTPUT_VARIABLE SDL_CFLAGS
+    OUTPUT_STRIP_TRAILING_WHITESPACE)
+message(STATUS "SDL_CFLAGS is ${SDL_CFLAGS}")
+
+execute_process(COMMAND 
+    ${SDL2_CONFIG} --libs
+    OUTPUT_VARIABLE SDL_LIBS
+    OUTPUT_STRIP_TRAILING_WHITESPACE)
+message(STATUS "SDL_LIBS is: ${SDL_LIBS}")
+
+
+
+set(ENV{PKG_CONFIG_PATH} /opt/vc/lib/pkgconfig)
+execute_process(COMMAND 
+    pkg-config --cflags bcm_host brcmglesv2
+    OUTPUT_VARIABLE BCM_CFLAGS
+    OUTPUT_STRIP_TRAILING_WHITESPACE)
+message(STATUS "BCM_CFLAGS is ${BCM_CFLAGS}")
+
+execute_process(COMMAND 
+    pkg-config --libs bcm_host brcmglesv2 brcmegl
+    OUTPUT_VARIABLE BCM_LIBS
+    OUTPUT_STRIP_TRAILING_WHITESPACE)
+message(STATUS "BCM_LIBS is: ${BCM_LIBS}")
+
+
 
 add_executable(photo_frame
-    src/phf_main.cpp
+    third_party/imgui/examples/example_sdl_opengl3/main.cpp
     third_party/imgui/examples/imgui_impl_sdl.cpp 
     third_party/imgui/examples/imgui_impl_opengl3.cpp
     third_party/imgui/imgui.cpp
@@ -61,8 +98,16 @@ target_include_directories(photo_frame PRIVATE
     third_party/imgui
     third_party/imgui/examples
     third_party/imgui/examples/libs/gl3w
+    ${SDL_INCLUDE_PREFIX}/include
 )
 
-target_compile_definitions(photo_frame PUBLIC IMGUI_IMPL_OPENGL_LOADER_GL3W)
 
+target_compile_definitions(photo_frame PUBLIC 
+    IMGUI_IMPL_OPENGL_LOADER_GL3W 
+    IMGUI_IMPL_OPENGL_ES2
+    __RASPBIAN__)
+    
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${SDL_CFLAGS} ${BCM_CFLAGS}")
+
+target_link_libraries(photo_frame -ldl ${SDL_LIBS} ${BCM_LIBS})
 
