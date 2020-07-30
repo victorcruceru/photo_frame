@@ -81,10 +81,7 @@ execute_process(COMMAND
     OUTPUT_STRIP_TRAILING_WHITESPACE)
 message(STATUS "BCM_LIBS is: ${BCM_LIBS}")
 
-
-
-add_executable(photo_frame
-    third_party/imgui/examples/example_sdl_opengl3/main.cpp
+add_library(dearimgui SHARED 
     third_party/imgui/examples/imgui_impl_sdl.cpp 
     third_party/imgui/examples/imgui_impl_opengl3.cpp
     third_party/imgui/imgui.cpp
@@ -93,8 +90,27 @@ add_executable(photo_frame
     third_party/imgui/imgui_widgets.cpp 
     third_party/imgui/examples/libs/gl3w/GL/gl3w.c                
 )
+set_target_properties(dearimgui PROPERTIES VERSION ${PROJECT_VERSION})
 
-target_include_directories(photo_frame PRIVATE
+target_include_directories(dearimgui PRIVATE
+    third_party/imgui
+    third_party/imgui/examples
+    third_party/imgui/examples/libs/gl3w
+    ${SDL_INCLUDE_PREFIX}/include
+)
+
+target_compile_definitions(dearimgui PUBLIC 
+    IMGUI_IMPL_OPENGL_LOADER_GL3W 
+    IMGUI_IMPL_OPENGL_ES2
+    __RASPBIAN__)
+
+
+add_executable(demo_imgui
+    third_party/imgui/examples/example_sdl_opengl3/main.cpp
+)
+
+
+target_include_directories(demo_imgui PRIVATE
     third_party/imgui
     third_party/imgui/examples
     third_party/imgui/examples/libs/gl3w
@@ -102,12 +118,34 @@ target_include_directories(photo_frame PRIVATE
 )
 
 
-target_compile_definitions(photo_frame PUBLIC 
+target_compile_definitions(demo_imgui PUBLIC 
     IMGUI_IMPL_OPENGL_LOADER_GL3W 
     IMGUI_IMPL_OPENGL_ES2
     __RASPBIAN__)
-    
+
+target_link_libraries(demo_imgui dearimgui -ldl ${SDL_LIBS} ${BCM_LIBS})
+
+find_package( OpenCV REQUIRED )
+add_executable( image_imgui src/phf_main.cpp )
+target_link_libraries( image_imgui dearimgui -ldl -lstdc++fs
+                       ${SDL_LIBS} 
+                       ${BCM_LIBS} 
+                       ${OpenCV_LIBS} )
+target_include_directories(image_imgui PRIVATE
+    third_party/imgui
+    third_party/imgui/examples
+    third_party/imgui/examples/libs/gl3w
+    ${SDL_INCLUDE_PREFIX}/include
+)
+
+
+target_compile_definitions(image_imgui PUBLIC 
+    IMGUI_IMPL_OPENGL_LOADER_GL3W 
+    IMGUI_IMPL_OPENGL_ES2
+    __RASPBIAN__)
+
+
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${SDL_CFLAGS} ${BCM_CFLAGS}")
 
-target_link_libraries(photo_frame -ldl ${SDL_LIBS} ${BCM_LIBS})
+
 
