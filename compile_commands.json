@@ -1,0 +1,47 @@
+[
+{
+  "directory": "/home/pi/photo_frame",
+  "command": "/usr/bin/c++  -DIMGUI_IMPL_OPENGL_ES2 -DIMGUI_IMPL_OPENGL_LOADER_GL3W -D__RASPBIAN__ -I/home/pi/photo_frame/third_party/imgui -I/home/pi/photo_frame/third_party/imgui/examples -I/home/pi/photo_frame/third_party/imgui/examples/libs/gl3w -I/usr/local/include -isystem /usr/local/include/opencv4   -I/usr/local/include/SDL2 -I/opt/vc/include -I/opt/vc/include/interface/vcos/pthreads -I/opt/vc/include/interface/vmcs_host/linux -D_REENTRANT -DUSE_VCHIQ_ARM -I/opt/vc/include -I/opt/vc/include/interface/vmcs_host/linux -I/opt/vc/include/interface/vcos/pthreads   -Wall -Werror -std=gnu++17 -o CMakeFiles/image_imgui.dir/src/phf_main.cpp.o -c /home/pi/photo_frame/src/phf_main.cpp",
+  "file": "/home/pi/photo_frame/src/phf_main.cpp"
+},
+{
+  "directory": "/home/pi/photo_frame",
+  "command": "/usr/bin/c++  -DIMGUI_IMPL_OPENGL_ES2 -DIMGUI_IMPL_OPENGL_LOADER_GL3W -D__RASPBIAN__ -Ddearimgui_EXPORTS -I/home/pi/photo_frame/third_party/imgui -I/home/pi/photo_frame/third_party/imgui/examples -I/home/pi/photo_frame/third_party/imgui/examples/libs/gl3w -I/usr/local/include   -I/usr/local/include/SDL2 -I/opt/vc/include -I/opt/vc/include/interface/vcos/pthreads -I/opt/vc/include/interface/vmcs_host/linux -D_REENTRANT -DUSE_VCHIQ_ARM -I/opt/vc/include -I/opt/vc/include/interface/vmcs_host/linux -I/opt/vc/include/interface/vcos/pthreads -fPIC   -Wall -Werror -std=gnu++17 -o CMakeFiles/dearimgui.dir/third_party/imgui/examples/imgui_impl_sdl.cpp.o -c /home/pi/photo_frame/third_party/imgui/examples/imgui_impl_sdl.cpp",
+  "file": "/home/pi/photo_frame/third_party/imgui/examples/imgui_impl_sdl.cpp"
+},
+{
+  "directory": "/home/pi/photo_frame",
+  "command": "/usr/bin/c++  -DIMGUI_IMPL_OPENGL_ES2 -DIMGUI_IMPL_OPENGL_LOADER_GL3W -D__RASPBIAN__ -Ddearimgui_EXPORTS -I/home/pi/photo_frame/third_party/imgui -I/home/pi/photo_frame/third_party/imgui/examples -I/home/pi/photo_frame/third_party/imgui/examples/libs/gl3w -I/usr/local/include   -I/usr/local/include/SDL2 -I/opt/vc/include -I/opt/vc/include/interface/vcos/pthreads -I/opt/vc/include/interface/vmcs_host/linux -D_REENTRANT -DUSE_VCHIQ_ARM -I/opt/vc/include -I/opt/vc/include/interface/vmcs_host/linux -I/opt/vc/include/interface/vcos/pthreads -fPIC   -Wall -Werror -std=gnu++17 -o CMakeFiles/dearimgui.dir/third_party/imgui/examples/imgui_impl_opengl3.cpp.o -c /home/pi/photo_frame/third_party/imgui/examples/imgui_impl_opengl3.cpp",
+  "file": "/home/pi/photo_frame/third_party/imgui/examples/imgui_impl_opengl3.cpp"
+},
+{
+  "directory": "/home/pi/photo_frame",
+  "command": "/usr/bin/c++  -DIMGUI_IMPL_OPENGL_ES2 -DIMGUI_IMPL_OPENGL_LOADER_GL3W -D__RASPBIAN__ -Ddearimgui_EXPORTS -I/home/pi/photo_frame/third_party/imgui -I/home/pi/photo_frame/third_party/imgui/examples -I/home/pi/photo_frame/third_party/imgui/examples/libs/gl3w -I/usr/local/include   -I/usr/local/include/SDL2 -I/opt/vc/include -I/opt/vc/include/interface/vcos/pthreads -I/opt/vc/include/interface/vmcs_host/linux -D_REENTRANT -DUSE_VCHIQ_ARM -I/opt/vc/include -I/opt/vc/include/interface/vmcs_host/linux -I/opt/vc/include/interface/vcos/pthreads -fPIC   -Wall -Werror -std=gnu++17 -o CMakeFiles/dearimgui.dir/third_party/imgui/imgui.cpp.o -c /home/pi/photo_frame/third_party/imgui/imgui.cpp",
+  "file": "/home/pi/photo_frame/third_party/imgui/imgui.cpp"
+},
+{
+  "directory": "/home/pi/photo_frame",
+  "command": "/usr/bin/c++  -DIMGUI_IMPL_OPENGL_ES2 -DIMGUI_IMPL_OPENGL_LOADER_GL3W -D__RASPBIAN__ -Ddearimgui_EXPORTS -I/home/pi/photo_frame/third_party/imgui -I/home/pi/photo_frame/third_party/imgui/examples -I/home/pi/photo_frame/third_party/imgui/examples/libs/gl3w -I/usr/local/include   -I/usr/local/include/SDL2 -I/opt/vc/include -I/opt/vc/include/interface/vcos/pthreads -I/opt/vc/include/interface/vmcs_host/linux -D_REENTRANT -DUSE_VCHIQ_ARM -I/opt/vc/include -I/opt/vc/include/interface/vmcs_host/linux -I/opt/vc/include/interface/vcos/pthreads -fPIC   -Wall -Werror -std=gnu++17 -o CMakeFiles/dearimgui.dir/third_party/imgui/imgui_demo.cpp.o -c /home/pi/photo_frame/third_party/imgui/imgui_demo.cpp",
+  "file": "/home/pi/photo_frame/third_party/imgui/imgui_demo.cpp"
+},
+{
+  "directory": "/home/pi/photo_frame",
+  "command": "/usr/bin/c++  -DIMGUI_IMPL_OPENGL_ES2 -DIMGUI_IMPL_OPENGL_LOADER_GL3W -D__RASPBIAN__ -Ddearimgui_EXPORTS -I/home/pi/photo_frame/third_party/imgui -I/home/pi/photo_frame/third_party/imgui/examples -I/home/pi/photo_frame/third_party/imgui/examples/libs/gl3w -I/usr/local/include   -I/usr/local/include/SDL2 -I/opt/vc/include -I/opt/vc/include/interface/vcos/pthreads -I/opt/vc/include/interface/vmcs_host/linux -D_REENTRANT -DUSE_VCHIQ_ARM -I/opt/vc/include -I/opt/vc/include/interface/vmcs_host/linux -I/opt/vc/include/interface/vcos/pthreads -fPIC   -Wall -Werror -std=gnu++17 -o CMakeFiles/dearimgui.dir/third_party/imgui/imgui_draw.cpp.o -c /home/pi/photo_frame/third_party/imgui/imgui_draw.cpp",
+  "file": "/home/pi/photo_frame/third_party/imgui/imgui_draw.cpp"
+},
+{
+  "directory": "/home/pi/photo_frame",
+  "command": "/usr/bin/c++  -DIMGUI_IMPL_OPENGL_ES2 -DIMGUI_IMPL_OPENGL_LOADER_GL3W -D__RASPBIAN__ -Ddearimgui_EXPORTS -I/home/pi/photo_frame/third_party/imgui -I/home/pi/photo_frame/third_party/imgui/examples -I/home/pi/photo_frame/third_party/imgui/examples/libs/gl3w -I/usr/local/include   -I/usr/local/include/SDL2 -I/opt/vc/include -I/opt/vc/include/interface/vcos/pthreads -I/opt/vc/include/interface/vmcs_host/linux -D_REENTRANT -DUSE_VCHIQ_ARM -I/opt/vc/include -I/opt/vc/include/interface/vmcs_host/linux -I/opt/vc/include/interface/vcos/pthreads -fPIC   -Wall -Werror -std=gnu++17 -o CMakeFiles/dearimgui.dir/third_party/imgui/imgui_widgets.cpp.o -c /home/pi/photo_frame/third_party/imgui/imgui_widgets.cpp",
+  "file": "/home/pi/photo_frame/third_party/imgui/imgui_widgets.cpp"
+},
+{
+  "directory": "/home/pi/photo_frame",
+  "command": "/usr/bin/cc -DIMGUI_IMPL_OPENGL_ES2 -DIMGUI_IMPL_OPENGL_LOADER_GL3W -D__RASPBIAN__ -Ddearimgui_EXPORTS -I/home/pi/photo_frame/third_party/imgui -I/home/pi/photo_frame/third_party/imgui/examples -I/home/pi/photo_frame/third_party/imgui/examples/libs/gl3w -I/usr/local/include  -fPIC   -Wall -Werror -o CMakeFiles/dearimgui.dir/third_party/imgui/examples/libs/gl3w/GL/gl3w.c.o   -c /home/pi/photo_frame/third_party/imgui/examples/libs/gl3w/GL/gl3w.c",
+  "file": "/home/pi/photo_frame/third_party/imgui/examples/libs/gl3w/GL/gl3w.c"
+},
+{
+  "directory": "/home/pi/photo_frame",
+  "command": "/usr/bin/c++  -DIMGUI_IMPL_OPENGL_ES2 -DIMGUI_IMPL_OPENGL_LOADER_GL3W -D__RASPBIAN__ -I/home/pi/photo_frame/third_party/imgui -I/home/pi/photo_frame/third_party/imgui/examples -I/home/pi/photo_frame/third_party/imgui/examples/libs/gl3w -I/usr/local/include   -I/usr/local/include/SDL2 -I/opt/vc/include -I/opt/vc/include/interface/vcos/pthreads -I/opt/vc/include/interface/vmcs_host/linux -D_REENTRANT -DUSE_VCHIQ_ARM -I/opt/vc/include -I/opt/vc/include/interface/vmcs_host/linux -I/opt/vc/include/interface/vcos/pthreads   -Wall -Werror -std=gnu++17 -o CMakeFiles/demo_imgui.dir/third_party/imgui/examples/example_sdl_opengl3/main.cpp.o -c /home/pi/photo_frame/third_party/imgui/examples/example_sdl_opengl3/main.cpp",
+  "file": "/home/pi/photo_frame/third_party/imgui/examples/example_sdl_opengl3/main.cpp"
+}
+]
